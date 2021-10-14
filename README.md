@@ -62,11 +62,6 @@ git clone https://github.com/mpacer/scipy_proceedings
     - If you submit multiple papers, you will need a new branch for each.
 4. [Set up your environment](#setting-up-your-environment).
 5. [Write your paper](#write-your-paper), [commit changes](#commit-your-changes), and [build your paper](#build-your-paper)
-6. [Create a PR](#create-a-paper-pr) or [push changes to your PR's branch](#push-your-changes) and [check your paper](#check-your-paper) on http://procbuild.scipy.org.
-    - If you want to alter the build system, do not include it in your
-      submission's PR, create a separate PR against `dev`
-      ([see below](creating-build-system-prs) for more details).
-7. Repeat steps 5 and 6, while also responding to reviewer feedback.
 
 #### Getting a local copy of the scipy_proceedings repo
 
@@ -77,35 +72,11 @@ git clone https://github.com/mpacer/scipy_proceedings
 - Clone the repo locally
     - `git clone https://github.com/<username>/scipy_proceedings`
     - `cd scipy_proceedings/`
-- Add the `scipy-conference` repository as your `upstream` remote
-    - `git remote add upstream https://github.com/scipy-conference/scipy_proceedings`
 
 If you run `git remote -v  ` you should see something like the following:
 ```
 origin	https://github.com/<username>/scipy_proceedings.git (fetch)
 origin	https://github.com/<username>/scipy_proceedings.git (push)
-upstream	https://github.com/scipy-conference/scipy_proceedings.git (fetch)
-upstream	https://github.com/scipy-conference/scipy_proceedings.git (push)
-```
-
-#### Getting the latest `2021` branch
-
-- Fetch the latest version of the `scipy_proceedings` repo
-    - `git fetch upstream`
-- Check out the upstream `2021` branch
-    - `git checkout -b 2021 --track upstream/2021`
-
-#### Creating a new branch based off of `2021`
-
-If you are submitting only one paper, you can use the `2021` branch directly.
-
-Otherwise, you will need to create a new branch based on `2021` and set its
-upstream to origin.
-
-```
-git checkout 2021
-git checkout -b <your_branch_name>
-git push --set-upstream origin <your_branch_name>
 ```
 
 #### Setting up your environment
@@ -127,7 +98,6 @@ git push --set-upstream origin <your_branch_name>
 #### Commit your changes
 
 - Commit any changes inside the `paper/<your_directory_name>`
-- When you push your commits to your PR's branch, the paper will be autobuilt
 - Do not commit any changes to files outside of your paper directory.
 
 If you want to change the way the build system works, we use a separate
@@ -137,8 +107,6 @@ submission procedure ([see below](creating-build-system-prs)).
 
 - Run `./make_paper.sh papers/firstname_surname` to make a PDF of your paper
 - Check the output in `output/<your_directory_name>/paper.pdf`.
-- Check that this output matches what you see on the
-  [build server](http://procbuild.scipy.org).
 
 ## Requirements
 
