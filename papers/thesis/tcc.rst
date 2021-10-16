@@ -259,7 +259,7 @@ the AWS proposed architecture for running Cromwell using the AWS Batch environme
    :figclass: w
 
 Finally, one of the improvements for building new bioinformatics pipelines was propose a minimal base template for our developers getting started following our best practices and guidelines. Several CI scripts, version control management,
-docummentation build scripts and automated workflow test suite integrated were compiled into this repository. It is a basic start pipeline so from begginners to advanced users can use it right away. Until the date of publishing of this paper, we
+docummentation build scripts and automated workflow test suite integrated were compiled into this repository. It is a basic start pipeline so from begginners to advanced users can use it right away. At the time of writing this paper, we
 were still validating the framework by migrating our old pipelines to WDL based on it. The figure :ref:`egfig8` shows the repository of our minimal pipeline template hosted as a template repository on Github.
 
 .. figure:: figure8.png
@@ -276,12 +276,64 @@ were still validating the framework by migrating our old pipelines to WDL based 
 C. Build, test  and optimization
 =================================
 
+In this stage, our team draw our inspiration from continous integration (CI), which has been part of the industry standard of modern development. CI services lift the burden of managing
+the software development lifecycle from the developers by providing a variety of tools for building and testing software applications in an automated and iterative manner. Development of 
+bioinformatic pipelines is not muchd ifferent in this regard from regular software systems - it typically mandates many interations as developers try to continuously improve the quality
+of their workflows as new software versions are released or new variant annotation datases are published.
+
+Before the CI, our tests were manually handled and all the builds were performed manually when the developers remembered to perform it. This caused to many refactories and hidden bugs that
+weren't easily manageable. There was also any code validation following WDL code style best practices, as more members started to push their code into the repositories, specially, the tasks modules,
+it brought to our attention the fact the changes in some module could affect many dependant pipelines. Figure :ref:`egfig9` presents an overview of the bioinformatics development lifecycle
+under our CI system. Like the development of regular software, the entire lifecycle consists of four stages (akin to a GitHub or Azure DevOps kind of development scenario):
+
+- **Develop** – the developer writes code for the variant calling pipeline, reusing when appropriate the existing task modules, as well as basic parameter collection.
+
+- **Build** – the developer requests merging the code into the main branch (a.k.a., a pull request); this automatically triggers the build process of the codebase, which validates the code style (linting), run the appropriate tests with small data samples as parameters to validate if all expected outputs are produced.
+
+- **Validation** - The validation phase follows if the build process succeeds; the final pipeline is evaluated against the benchmark datataset, after which the test performance metrics is reported to the developer.
+
+- **Release**  - if all the testes cases are passed and the developer is satisfied with the accuracy and metrics, the pipeline can then be promoted to a release environment for upstream consumption, potentially replacing the old versioned pipeline that was already released.
+
+
+.. figure:: figure9.png
+
+   The development and release lifecycle of a bioinformatics pipeline in our software development process. :label:`egfig9`
+
+
+.. figure:: figure9.png
+   :align: center
+   :figclass: w
+
+Our first CI system was implemented and tested with some test pipelines. As illustrated in Figure :ref:`egfig10`, we implemented it using
+Github Actions and hand the opportunity to use several auxiliar tools for testing, packaging and verifying code in the process. One great example was writting 
+tests for the pipeline and guarantee the correct and expected outputs. We used the open-source tools Pytest-workflow that make testing as simple as possible,
+by testing a WDL pipeline run through Cromwell.
+
+.. figure:: figure10.png
+
+   Our build continous integration script for the tasks of validating the code and running tests. :label:`egfig10`
+
+.. figure:: figure10.png
+   :align: center
+   :figclass: w
+
+
 D. Validation
 =============
+
+Our primary goals here are to (1) standardize
+the components leveraged for model lifecycle management – model
+training, model validation, model storage/versioning, model and
+health monitoring; (2) provide lightweight process and templates to
+simplify the data scientist/app developer collaboration; (3) reduce
+the time from model creation to production deployment from the
+order of months to weeks to days
 
 
 E. Release and deploy
 =====================
+
+
 
 F. Docummentation
 =================
