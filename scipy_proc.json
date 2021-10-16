@@ -18,11 +18,11 @@
       "license": "Creative Commons Attribution License (CCAL)"
     },
     "title": {
-      "conference": "Python in Science Conference",
-      "full": "Proceedings of the 20th Python in Science Conference",
-      "short": "PROC. OF THE 20th PYTHON IN SCIENCE CONF. (SCIPY 2021)",
-      "acronym": "SciPy",
-      "ordinal": "20th"
+      "conference": "",
+      "full": "",
+      "short": "",
+      "acronym": "",
+      "ordinal": ""
     },
     "citation_key": "proc-scipy-2021",
     "editor_email": [
