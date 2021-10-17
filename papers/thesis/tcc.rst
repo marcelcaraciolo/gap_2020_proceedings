@@ -17,35 +17,33 @@ Continuous Improvement For Clinical Bioinformatics Pipelines
    Typical pipeline involves collecting and refining the requirements, translating into features, setting up an infrastructure, building a computation
    process, and analyzing the results. When the adjustments are made, this process repeates as many times as necessary until the pipeline has been properly
    validated. At Varstation, by using continous improvement techniques, we built a more efficient way to iterate on building those pipelines so we could optimize
-   and deliver them faster, but commited to providing accurate tests results. In this paper, we present our approach for design, build and deliver our
-   pipelines after several changes in our software development process, which can be valuable for any bioinformatics teams 
-   interested in implementing with faster iterations clinical bioinformatics pipelines.   
-
-   
+   and deliver faster, but commited to providing accurate tests results. In this paper, we present our approach for design, build and deliver our
+   pipelines after several changes in our software development process, which can be valuable for any bioinformatics teams interested in implementing with faster
+   iterations clinical bioinformatics pipelines.
 
 .. class:: keywords
 
-   bioinformatics pipelines, clinical NGS, continous improvement, software development, continuous integration, continuous delivery, devops practices
+   bioinformatics pipelines, project management, healthcare, clinical NGS, continous improvement, software development, continuous integration, continuous delivery, devops practices
 
 Introduction
 ------------
 
-Bioinformatics has become an important component in clinical laboratories generating, analyzing, maintaining, and interpreting data from molecular genetics testing.
+Bioinformatics has become an important component in clinical laboratories generating, analyzing, maintaining, and interpreting data from molecular genetics testing :cite:`Gavin01`.
 Given the rapid adoption of NGS-based clinical testing, service providers must develop informatics workflows that adhere to the rigor of clinical laboratory standards,
 but flexible to changes as the chemistry and software for analyzing sequencing data mature. Next generation sequencing (NGS) is a transformative technology that is redefining the landscape
 of human molecular genetic testing. It enables unprecedented parallelization of sequencing reactions, facilitating highly multiplexed testing paradigms with relatively rapid turnaround
 time and decreasing costs. A growing number of diagnostic laboratories are embracing NGS and using it to drive new DNA-based test offerings, ranging in size and species, from human to
-microbiome genomes and from multigene disease-specific panels to use of complete genome sequencing. When genetic tests are ordered, there is probably little thought as to all of the of bioinformatics work required
+microbiome genomes and from multigene disease-specific panels to use of complete genome sequencing :cite:`Horner01`. When genetic tests are ordered, there is probably little thought as to all of the of bioinformatics work required
 to make the test possible. The Hospital Israelita Albert Einstein provides diagnostic tests to help physicians understand risk profiles, diagnose medical conditions, or inform treatment decisions. To support their
 comprehensive test menu and commitment to providing timely and accurate test results, the bioinformatics team focuses on optimizing their pipelines by designing workflows to leverage modularity and computational re-use, in order to
 better understand the requirements for each molecular test; by using declarative workflow language as main programming tool to a more collaborative and legible code; by applying continous integration systems to the software development
-in order to avoid manual validation, integration tests and releases; and by creating a collaborative repository of guidelines so any bioinformatician starting working at our team, can easily begin build his first pipelines.
+in order to avoid manual validation, integration tests and releases; and by creating a collaborative repository of guidelines so any bioinformatician, beginner or experienced, at our team, can  begin build his first pipelines following the best practices.
 All these improvements were conducted during three months by observing the bioinformatics pipeline development organization and applying changes in order to evaluate the gains in each step of the bioinformatics development lifecycle.
 
 The purpose of this paper is to present an experience report in our bioinformatics team at Varstation (our bioinformatics department at the hospital), by providing a collection of experience notes, artifacts and systems that we introduced
 and formalized during the period of reviewing our bioinformatics software development process. The detailed study results can be found in the remainder of the paper.
 This paper is structured as follows. Section II introduces the background and related work that indicate the reason for our research. Section III introduces the research method
-and process. Section IV presents the artifacts produced and related results. Section V discusses the implications to study results and threats to validity. Section VI concludes the study and illustrates the future work.
+and process. Section IV presents the artifacts produced and related results. Section V discusses the implications to study results. Section VI concludes the study and illustrates the future work.
 
 II. Background
 --------------
@@ -58,7 +56,7 @@ Bioinformatics pipeline development
 
 With the advent of clinical sequencing , the bioinformatis pipelines for detection and variant annotation are becoming more popular. However, the process of translating the requirements of the biological and medical specialists is not a trivial task, adding to that,
 the continuous development, testing and release, with improvements, the clinical pipelines. Compared to the traditional software development, the bioinformatics pipelines handles with biological inputs/outputs, runtime parameters and code itself, and  requires a continous
-monitoring as the new versions from the dependant softwares are released or a need for a replacement of a new annotation biological database or even a new type of variant that must be detected. In our scenario the bioinformatics pipeline must be reavaluated every time 
+monitoring as the new versions from the dependant softwares are released or a need for a replacement of a new annotation biological database or even a new type of variant that must be detected  :cite:`Whiffin01`. In our scenario the bioinformatics pipeline must be reavaluated every time 
 that a new genome version is updated or any refreshments in related databases. Developing a bioinformatics pipeline includes five steps from its conception to the final release in the production environment. At the figure :ref:`egfig` we depict the bioinformatics pipeline development lifecycle.
 
 .. figure:: figure1.png
@@ -67,7 +65,7 @@ that a new genome version is updated or any refreshments in related databases. D
 
    The commom bioinformatics clinical pipeline development lifecycle. Each step in this workflow must be consolidated with the inputs/outputs mandatory for the following steps.  :label:`egfig` 
 
-The analysis pipeline is typically considered to comprise the five main steps of plan/design, build, test/optimization, validation, and release/deploy. The planning includes the biological problem understanding and the selection of the components required to build the pipeline. The 
+The analysis pipeline is typically considered to comprise the five main steps of plan/design, build, test/optimization, validation, and release/deploy :cite:`Koboldt01`. The planning includes the biological problem understanding and the selection of the components required to build the pipeline. The 
 build stage leads to bioinformatics pipeline development including the coding, testing and code styles standardization. The test/optimization occurs when the pipeline is built successfully and it must be evaluated considering secondary requirements such as performance and scale.  
 The validation may include the validation and benchmarking of the pipeline in order to guarantee the minimum defined performance metrics criteria. Finally, the release step is when the final artifacts must be delivered considering factors of versioning, docummentation and the executable
 binary to be deployed in the production environment. This general framework varies depending on the precise analytical application, and successful clinical implementation of such work flows requires extensive expertise in bioinformatics and clinical regulatory issues.
@@ -75,9 +73,9 @@ binary to be deployed in the production environment. This general framework vari
 Continuous Improvement
 =======================
 
-Continuous Improvement related topics have been studied by software engineering (SE) practitioners and researchers for many years. There are several related articles in blogs,
-magazine, SE releated magazines. Continuous Improvement identifies the opportunities to streamline the work while reducing waste. It follows the Japanese concept of kaizen, which means to make small incremental improvements continuously. It empowers the agile team so
-they can work well together and discuss what is working and what isn’t. There are several empirical studies and practices of conducting continous improvement in software organizations. However, despite these practices have been examined by in many software industries, we failed
+Continuous Improvement related topics have been studied by software engineering (SE) practitioners and researchers for many years :cite:`Birk01`. There are several related articles in blogs,
+magazine, SE releated magazines :cite:`TechSpace`. Continuous Improvement identifies the opportunities to streamline the work while reducing waste. It follows the Japanese concept of kaizen, which means to make small incremental improvements continuously. It empowers the agile team so
+they can work well together and discuss what is working and what isn’t. There are several empirical studies and practices of conducting continous improvement in software organizations :cite:`Birk01` :cite:`Brian01`. However, despite these practices have been examined by in many software industries, we failed
 to identify any research conducted on healtchare and bioinformatics software organizations that are carrying continous improvement in practices.
 
 Product Canvas: Building the pipelines with the right features
@@ -308,156 +306,96 @@ in each step is indicated within parentheses.
 E. Release and deploy
 =====================
 
-xxxx
+Our release stage was also modified in order to enable an automated manner to perform the deployment of the release artifacts with version control and release notes. Before we deployed versions manually but without concise release notes
+or a controlled version control common to our all bioinformatic pipeline. Moreover, we didn't have an offical place to put our release files. We  integrated with our continous integration tool in order that every new 
+tag pushed to the Github (a new version published), the CI starts to verify all the WDL files, package it into a binary (zip file) and makes it available as release package at the pipeline's repository. 
+Our Releases now are available for other teams to download and use it, and can receive notifications when they are published. Figure :ref:`egfig12` presents the released pipeline packaged contaning the releases notes and the corresponding assets.
+
+
+.. figure:: figure12.png
+
+   Releases Page of one our pipeline's repository on Github. Now all the pipelines follows our best practices by using our CI tools available at our minimal pipeline template. :label:`egfig12`
+
 
 
 F. Docummentation
 =================
 
+Our experience working with a multidisciplinary team of developers and bioinformaticians with different background in the creation of a bioinformatics pipeline exposed a significant challenge. 
+Through our process of continous improvement, we decided to address this challenge and improve the collaboration and the on-boarding of the new members to our team by creating a 
+of best practices guidelines, containing examples about how creating the pipelines, and detailing each step from our variant calling pipeline lifecycle development. At the time of writing of this paper,
+the first draft of our bioinformatics development playbook was available and acommodated several guidelines and manuals from the design to the deployment of a pipeline. The docummentation is hosted on-line
+and its code is all on a Github repository, so anyone at the team can collaborate by adding or changing the content as a dynamic docummentation. The figure :ref:`egfig13`  presents one of the screenshots of our bioinformatics playbook.
+All the code is based on the open-source media wiki tool Docusaurus.
 
 
+.. figure:: figure13.png
+
+   One of the sections of our bioinformatics playbook on-line. The content is written in Markdown and all the source code is availaibe on our Github repository. Anyone in the team is invited to collaborate. :label:`egfig13`
 
 V. Discussion
 --------------
 
-Our primary goals here are to (1) standardize
-the components leveraged for model lifecycle management – model
-training, model validation, model storage/versioning, model and
-health monitoring; (2) provide lightweight process and templates to
-simplify the data scientist/app developer collaboration; (3) reduce
-the time from model creation to production deployment from the
-order of months to weeks to days
+In this section we carry out the discussion on our continous improvement proccess and
+explain our preliminary perceived succes factors after applying it through three months.
+
+A. Perceived success factors
+============================
+
+In this study, we present a set of key results presented at the section Results after applying the PDCA continous improvement methodology. An emphasis was put on 
+the incremental approach to improve our bioinformatics pipeline development workflow and its process. Since the initial phase of our study, there was no documented
+test automation strategy, our requirements collection tools was not mature, there wasn't any code writing standards and several delays on start using the new execution
+engine for our pipelines using WDL and Cromwell. Indeed, all these problems was dicovered step by step in practices. Our team continuously explored their needs and possibilities
+for each of one of our development stages. The direction of our improvement process was discussed in our informal meetings during the retrospective and planning sprint cerimonies.
+
+Accordingly, the actionable steps were took to make the meaningful changes. We didn't change the whole process, therefore, the changes were always added incrementally piece by piece
+with some testing pipelines into the existing development process. Some changes occurred naturally as problemes arise and needed tobe fixed. The change steps were carried out 
+based on experiments to allow learning from all the team, even though some succeeded, some failed and some we postponed due to the complexity. The incremental changes affected
+daily work of the team, both positively and negatively. At the time of writing this paper, our team retrospective sessions showed a high satisfaction and maturity after applying
+our continous improvement process, which is demonstrated by the set of indicators:
+
+- **The increasing speed to release:** Based on the testing pipelines, we could make continous release decisions based on our automation continous integration. The time from development to a build successfully, at our preliminary tests improved from 5 days to 2-3 days when building a pipeline from scratch.
+
+- **Improving productivity of the team:** The team was capable to develop in a efficient way using the new coding platform, the automation process contributed to speed the several manual steps what consummed the team effort.
+
+- **Finding the relevanet requirements:** Our team using visual tools, such as the canvas, could now identify the specific requirements when building bioinformatics pipeline, even finding the modules that could be reused instead of developing from scratch, and pinpointing the expected inputs/outputs required for the pipeline.
+
+- **High satisfaction of the customers:** There wasn't enough data to support this, but the perceived impressions from our biologists and specialists were very satisfactory, since the changes of how we collected the requirements and at our training demonstration sessions that our platform were more robust and envolving.
+
+- **Shared platform work guidelines:** The quality of our bioinformatic pipelines started to improve, showing up in low number of maintenance issues, and for the beginners and advanced developers using our playbook, they started to standardize the lifecycle management of our development - onboarding training, planning, building, testing, validation and release.
+
+
+B. Bioinformatics pipeline development process improvement culture
+==================================================================
+
+After applying our continous improvement changes, our team reported that
+the developers voluntary asked to participate and improve our development process. The team started to experiment
+and improve more, reviewing the feedbacks of the process, and adjusting it to make it better resulted. Our playbook was one these resulting artifacts as a 
+great compilation of our practices, as we started to investigate each step of our development process and co-create continous strategies to
+improve it. Finally, the intenal open source culture applied and the team collaborative sense of ownership that the bioinformatics is critical component for a
+sequecing genetic test, started to make changes towards our laboratory's needs and goals.
 
 
 VI. Conclusion and future work
 ------------------------------
 
+This paper presents our experience report applying continous improvement techniques in our
+bioinformatics pipeline development process at Hospital Israelita Albert Einstein. For the study purpose,
+we reviewed each stage of our workflow development process. Several meetings were held to discuss the details.
+The team defined and planned the set of goals that they wanted to act, and peformed several experiments with adjustments
+in the process and to include new software tools to provide lightweight process and simplify the bioinformatician collaboration.
+Finally, the team reviewed the adjustments and using incremental approach, to assses the improvements.
 
-o present the study results, we first provide an overview
-of case description. Next, the research question is answered.
+This paper has three main contributions. First, from the industry perspective, it introduces a use case of carrying out continous improvement methods
+in a bioinformatics software development team. Second, from the academia perspective, this paper connects agile and project management researchers
+to practical application of PDCA techniques into a non-traditional software project. Also, we identify some sucess factors as the whole team effort and
+the time reduced from the pipeline creation to production deployment using continous integration (CI) tools. Finally, the artifacts produced after our
+improvements might inspire and benefits other software organizations to carry out these same methodologies in their projects. We believe that the set
+of the key results presented in this paper might be candidate solutions to other bioinformatics software teams, that are facing the same issues of scaling up
+the team and the high-effective infrastructure to keep up with the new challenges of the demanding NGS molecular tests.
 
-The text files that record the transcription verbatim of
-meetings, meeting notes, as well as experience notes were
-imported into NVivo (a qualitative data analysis software) [24].
-We identified critical success factors from those materials
-by performing inductive coding [25]. Inductive coding is an
-thematic analysis technique. It uses a iterative approach to
-extract data from sources and then build the common themes
-to classify them. Our inductive coding process was performed
-in three steps, as sho
-
-
-
-We studied several industrial experience reports conducted
-in software engineering field. We conducted our study in three
-stages: (1) a study plan, (2) data collection, (3) data analysis.
-Each stage is described in the following sub-sections.
-
-Figure 3 presents an overview of the ML development lifecycle
-under our CI system. Like the development of regular software, the
-entire lifecycle consists of four stages (akin to a GitHub or Azure
-DevOps kind of development scenario):
-• Develop – the developer writes code for featurizing data, selecting an appropriate algorithm with efficient implementation, as well as basic parameter tuning; the entire ML-related
-software artifact produced by this stage (including the feature extraction code) is what we refer to as a model.
-• Build – the developer requests merging the code into the
-master branch (a.k.a., a pull request); this automatically triggers the build process of the codebase, which trains the new
-model over the training data.
-• Test – the test phase follows if the build process succeeds; the
-final model returned is evualuated against the test dataset,
-after which the test accuracy is reported to the developer.
-• Release – if all test cases are passed and the developer is
-satisfied with the test accuracy, the model can then be promoted to a release environment for upstream consumption,
-potentially replacing an old model that was already released.
-
-Twelve hundred years ago  |---| in a galaxy just across the hill...
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien
-tortor, bibendum et pretium molestie, dapibus ac ante. Nam odio orci, interdum
-sit amet placerat non, molestie sed dui. Pellentesque eu quam ac mauris
-tristique sodales. Fusce sodales laoreet nulla, id pellentesque risus convallis
-eget. Nam id ante gravida justo eleifend semper vel ut nisi. Phasellus
-adipiscing risus quis dui facilisis fermentum. Duis quis sodales neque. Aliquam
-ut tellus dolor. Etiam ac elit nec risus lobortis tempus id nec erat. Morbi eu
-purus enim. Integer et velit vitae arcu interdum aliquet at eget purus. Integer
-quis nisi neque. Morbi ac odio et leo dignissim sodales. Pellentesque nec nibh
-nulla. Donec faucibus purus leo. Nullam vel lorem eget enim blandit ultrices.
-Ut urna lacus, scelerisque nec pellentesque quis, laoreet eu magna. Quisque ac
-justo vitae odio tincidunt tempus at vitae tortor.
-
-Of course, no paper would be complete without some source code.  Without
-highlighting, it would look like this::
-
-   def sum(a, b):
-       """Sum two numbers."""
-
-       return a + b
-
-With code-highlighting:
-
-.. code-block:: python
-
-   def sum(a, b):
-       """Sum two numbers."""
-
-       return a + b
-
-Maybe also in another language, and with line numbers:
-
-.. code-block:: c
-   :linenos:
-
-   int main() {
-       for (int i = 0; i < 10; i++) {
-           /* do something */
-       }
-       return 0;
-   }
-
-Or a snippet from the above code, starting at the correct line number:
-
-.. code-block:: c
-   :linenos:
-   :linenostart: 2
-
-   for (int i = 0; i < 10; i++) {
-       /* do something */
-   }
-   
-Inline code looks like this: :code:`chunk of code`.
-
-Important Part
---------------
-
-It is well known [Atr03]_ that Spice grows on the planet Dune.  Test
-some maths, for example :math:`e^{\pi i} + 3 \delta`.  Or maybe an
-equation on a separate line:
-
-.. math::
-
-   g(x) = \int_0^\infty f(x) dx
-
-or on multiple, aligned lines:
-
-.. math::
-   :type: eqnarray
-
-   g(x) &=& \int_0^\infty f(x) dx \\
-        &=& \ldots
-
-The area of a circle and volume of a sphere are given as
-
-.. math::
-   :label: circarea
-
-   A(r) = \pi r^2.
-
-.. math::
-   :label: spherevol
-
-   V(r) = \frac{4}{3} \pi r^3
-
-We can then refer back to Equation (:ref:`circarea`) or
-(:ref:`spherevol`) later.
+For future work, we want to validate externally and internally our continous improvement process to evaluate and measure the long-term benefits
+on applying these improvements at our development process.
 
 Mauris purus enim, volutpat non dapibus et, gravida sit amet sapien. In at
 consectetur lacus. Praesent orci nulla, blandit eu egestas nec, facilisis vel
@@ -581,7 +519,16 @@ Perhaps we want to end off with a quote by Lao Tse [#]_:
 
 References
 ----------
-.. [Atr03] P. Atreides. *How to catch a sandworm*,
-           Transactions on Terraforming, 21(3):261-300, August 2003.
+.. [Gavin01] Gavin R Oliver, Steven N Hart, Eric W Klee, *Bioinformatics for Clinical Next Generation Sequencing*, Clinical Chemistry, Volume 61, Issue 1, 1 January 2015, Pages 124–135, https://doi.org/10.1373/clinchem.2014.224360
 
+.. [Horner01] Horner DS, Pavesi G, Castrignanò T, De Meo PDaO, Liuni S, Sammeth M , et al. *Bioinformatics approaches for genomics and post genomics applications of next-generation sequencing.* Brief Bioinform 2010;11:181–97.
 
+.. [Whiffin01] Whiffin, Nicola & Brugger, Kim & Ahn, Joo Wook. (2017). *Practice guidelines for development and validation of software, with particular focus on bioinformatics pipelines for processing NGS data in clinical diagnostic laboratories.* 10.7287/peerj.preprints.2996v1. 
+
+.. [Koboldt01] Koboldt, D.C. *Best practices for variant calling in clinical sequencing*. Genome Med 12, 91 (2020). https://doi.org/10.1186/s13073-020-00791-w
+
+.. [Birk01] Birk A., Rombach D. (2001) *A Practical Approach to Continuous Improvement in Software Engineering*. In: Wieczorek M., Meyerhoff D. (eds) Software Quality. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-56529-8_3
+
+.. [TechSpace] Contenteratechspace Blog Article. *What is Continuous Improvement in Agile*. Acessible in: https://contenteratechspace.com/blog/what-is-continuous-improvement-in-agile/
+
+.. [Brian01] Brian Fitzgerald and Klaas-Jan Stol. 2014. *Continuous software engineering and beyond: trends and challenges.* In Proceedings of the 1st International Workshop on Rapid Continuous Software Engineering. Association for Computing Machinery, New York, NY, USA, 1–9. DOI:https://doi.org/10.1145/2593812.2593813
