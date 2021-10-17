@@ -62,13 +62,10 @@ monitoring as the new versions from the dependant softwares are released or a ne
 that a new genome version is updated or any refreshments in related databases. Developing a bioinformatics pipeline includes five steps from its conception to the final release in the production environment. At the figure :ref:`egfig` we depict the bioinformatics pipeline development lifecycle.
 
 .. figure:: figure1.png
-
-   The commom bioinformatics clinical pipeline development lifecycle. Each step in this workflow must be consolidated with the inputs/outputs mandatory for the following steps.  :label:`egfig` 
-
-.. figure:: figure1.png
    :align: center
    :figclass: w
 
+   The commom bioinformatics clinical pipeline development lifecycle. Each step in this workflow must be consolidated with the inputs/outputs mandatory for the following steps.  :label:`egfig` 
 
 The analysis pipeline is typically considered to comprise the five main steps of plan/design, build, test/optimization, validation, and release/deploy. The planning includes the biological problem understanding and the selection of the components required to build the pipeline. The 
 build stage leads to bioinformatics pipeline development including the coding, testing and code styles standardization. The test/optimization occurs when the pipeline is built successfully and it must be evaluated considering secondary requirements such as performance and scale.  
@@ -93,13 +90,11 @@ information to the pipeline development phase as a product with a specific goal 
 required acceptance criteria.
 
 .. figure:: figure2.png
+   :align: center
+   :figclass: w
 
    The Product Canvas is a collaborative tool that combines Agile and UX by complementing user stories with personas, storyboards, scenarios, design sketches and other UX artifacts. It helps the team
    to identify the target group, extracting their needs and solving those needs with solutions and finally packaging those solutions as tasks.  :label:`egfig2` 
-
-.. figure:: figure2.png
-   :align: center
-   :figclass: w
 
 
 Workflow Description Language for building pipelines
@@ -122,13 +117,10 @@ Figure :ref:`egfig3` presents an overview of the software development lifecycle 
 a continous delivery (CD) when the release artifact is automatically released to the repository , or even further, to a continuous deployment, when in this case the artifact is deployed automatically to the production environment.
 
 .. figure:: figure3.png
-
-   The development lifecycle in the framework of traditional software development.  :label:`egfig3`
-
-.. figure:: figure3.png
    :scale: 20%
    :figclass: bht
 
+   The development lifecycle in the framework of traditional software development.  :label:`egfig3`
 
 Development Playbooks
 =====================
@@ -195,15 +187,12 @@ each pipeline component (task) and the performance criteria that will be conside
 
 At the figure :ref:`egfig4` , we show an example of a full-filled canvas in one of our internal trainings. The artifact is available as open-source template at the website miro.com.
 
-
-.. figure:: figure4.png
-
-   Our Bioinformatics Pipeline Canvas, inspired by the Product Canvas as a visual tool for our developers and product owners to facilitate and translate the clinical and biological requirements into features, expected inputs and outputs and
-   performance metrics criteria.  :label:`egfig4` 
-
 .. figure:: figure4.png
    :align: center
    :figclass: w
+
+   Our Bioinformatics Pipeline Canvas, inspired by the Product Canvas as a visual tool for our developers and product owners to facilitate and translate the clinical and biological requirements into features, expected inputs and outputs and
+   performance metrics criteria.  :label:`egfig4` 
 
 
 B. Development
@@ -218,7 +207,6 @@ Our team reorganized the pipelines and broke the code within them into smaller m
 input files By reusing the tasks , developers can dramatically speed the development of new workflows. The figures :ref:`egfig5` and :ref:`egfig6` presents the architecture overview of bioinformatics workflow written in modules and
 the WDL declarative syntax and style code, respectively.
 
-
 .. figure:: figure5.png
 
    Bioinformatics workflows written with WDL in multiple levels of complexity warrant a modular construction. It is easiest to program the workflow when its logic is abstracted away (in Tasks, red)
@@ -227,20 +215,11 @@ the WDL declarative syntax and style code, respectively.
    and scatter-gather patterns (task 2 scattered across samples being merged into task 3). :label:`egfig5`
 
 
-.. figure:: figure5.png
-   :align: center
-   :figclass: w
-
-
 .. figure:: figure6.png
 
    Example of an workflow skeleton. We define the inputs and corresponding outputs, each one declared as variables. We also define the tasks, which it will be computational blocks that will execute the pipeline commands.
    These tasks are invoked from the main workflow using the call methods. :label:`egfig6`
 
-
-.. figure:: figure6.png
-   :align: center
-   :figclass: w
 
 The team also changed the orchestration tool from using AWS Lambda tasks to a open source bioinformatics tool developed by the Broad Institute of Harvard University and MIT called Cromwell.
 It is a workflow-execution engine that simplifies the orchestration of computing tasks needed for genomic analysis. With the infra-structure and devops team working together, we led to Cromwell
@@ -248,29 +227,19 @@ being able to run directly on an Amazon Web Services (AWS, cloud-computing) envi
 For instance, Our Whole Human Genome Variant Calling Pipeline is using Cromwell to automate and enhance its quality control capabilities in our analysis software Varstation. Figure :ref:`egfig7` presents
 the AWS proposed architecture for running Cromwell using the AWS Batch environment.
 
-
 .. figure:: figure7.png
 
    Cromwell is a workflow management system for scientific workflows developed by the Broad Institute and supports job execution using AWS Batch. :label:`egfig7`
 
 
-.. figure:: figure7.png
-   :align: center
-   :figclass: w
-
 Finally, one of the improvements for building new bioinformatics pipelines was propose a minimal base template for our developers getting started following our best practices and guidelines. Several CI scripts, version control management,
 docummentation build scripts and automated workflow test suite integrated were compiled into this repository. It is a basic start pipeline so from begginners to advanced users can use it right away. At the time of writing this paper, we
 were still validating the framework by migrating our old pipelines to WDL based on it. The figure :ref:`egfig8` shows the repository of our minimal pipeline template hosted as a template repository on Github.
 
+
 .. figure:: figure8.png
 
    Our minimal pipeline template was hosted in Github as a pipeline repository so the developers can easily fork all the code to their new pipeline repository. :label:`egfig8`
-
-
-.. figure:: figure8.png
-   :align: center
-   :figclass: w
-
 
 
 C. Build, test  and optimization
@@ -300,26 +269,56 @@ under our CI system. Like the development of regular software, the entire lifecy
    The development and release lifecycle of a bioinformatics pipeline in our software development process. :label:`egfig9`
 
 
-.. figure:: figure9.png
-   :align: center
-   :figclass: w
-
 Our first CI system was implemented and tested with some test pipelines. As illustrated in Figure :ref:`egfig10`, we implemented it using
-Github Actions and hand the opportunity to use several auxiliar tools for testing, packaging and verifying code in the process. One great example was writting 
-tests for the pipeline and guarantee the correct and expected outputs. We used the open-source tools Pytest-workflow that make testing as simple as possible,
-by testing a WDL pipeline run through Cromwell.
+Github Actions and we integrated some auxiliar tools for testing, packaging and verifying code in the process. One example was writting 
+tests for the pipeline and guarantee the correct and expected outputs. We used the open-source tool Pytest-workflow that make testing as simple as possible,
+by testing a WDL pipeline run through Cromwell. The CI runs the test-suite available with the sample data and verifies the cromwell log outputs in seek of any errors found
+during the execution.
+
 
 .. figure:: figure10.png
+   :align: center
+   :figclass: w
 
    Our build continous integration script for the tasks of validating the code and running tests. :label:`egfig10`
-
-.. figure:: figure10.png
-   :align: center
-   :figclass: w
 
 
 D. Validation
 =============
+
+All clinical bioinformatics systems require that primary, secondary, and tertiary analytical components be properly documented and validated.
+Accreditation requirements also state that bioinformatics pipelines must be validated and performance criteria clearly defined. This should include determination of variant calling sensitivity,
+specificity, accuracy, and precision for all variant types reported by the clinical assay.
+
+Our benchmarking strategy to meet these requirements was to evaluate the performance using a set of reference samples with a large number of gold-standard variant calls and
+clinical samples with a a small number of clinical variants that are specific to the diagnostic assay being evaluated. We developed a benchmarking pipeline (vcf comparison framework)
+which accepts input and truth set variant call files and regions of interest files to calculate the performance metrics across the entire region of interest.  Before the continous improvement
+process, our benchmark workflow was performed manually using bash scripts and terminal commandlines. Then, we ported our benchmarking modules to WDL format to use pipeline execution engines
+such as Cromwell, using our computer-infrastructure at Amazon WebServices. We also integrated with deployment tool, such as Github Actions, a feature that could automate our benchmarking workflows
+when any pipeline was released a new candidate version.
+
+The figure :ref:`egfig11` presents a schematic diagram of the benchmark framework used in this study. The benchmarking workflow written in WDL format consistes of five main steps in which the software tool employed
+in each step is indicated within parentheses.
+
+.. figure:: figure11.png
+
+   Our Benchmark reference implementation of a validation framework. :label:`egfig11`
+
+
+E. Release and deploy
+=====================
+
+xxxx
+
+
+F. Docummentation
+=================
+
+
+
+
+V. Discussion
+--------------
 
 Our primary goals here are to (1) standardize
 the components leveraged for model lifecycle management – model
@@ -330,15 +329,8 @@ the time from model creation to production deployment from the
 order of months to weeks to days
 
 
-E. Release and deploy
-=====================
-
-
-
-F. Docummentation
-=================
-
-
+VI. Conclusion and future work
+------------------------------
 
 
 o present the study results, we first provide an overview
