@@ -314,12 +314,14 @@ in each step is indicated within parentheses.
 E. Release and deploy
 =====================
 
-Our release stage was also modified in order to enable an automated manner to perform the deployment of the release artifacts with version control and release notes. Before we deployed versions manually but without concise release notes
+Our release stage was also modified in order to enable an automated manner to perform the deployment of the release artifacts with version control, pipeline docummentation and release notes. Before we deployed versions manually but without concise release notes
 or a controlled version control common to our all bioinformatic pipeline. Moreover, we didn't have an offical place to put our release files. We  integrated with our continous integration tool in order that every new 
 tag pushed to the Github (a new version published), the CI starts to verify all the WDL files, package it into a binary (zip file) and makes it available as release package at the pipeline's repository [#]_. 
-Our Releases now are available for other teams to download and use it, and can receive notifications when they are published. Figure :ref:`egfig12` presents the released pipeline packaged contaning the releases notes and the corresponding assets.
+The docummentation is also published to the Github Pages as a single page for each pipeline [#]_. With this improvement, our Releases became
+available for other teams to download and use it, and can receive notifications when they are published. Figure :ref:`egfig12` presents the released pipeline packaged contaning the releases notes and the corresponding assets.
 
 .. [#] Example of our CI script for packaging and releasing our bioinformatics pipelines, Available at https://gist.github.com/marcelcaraciolo/4bae60a66f9ae9a68c27a4102eb8769c
+.. [#] Example of our pipeline docummentation, Available at https://varstation.github.io/pipeline-template/0.1.0/index.html
 
 .. figure:: figure12.png
 
