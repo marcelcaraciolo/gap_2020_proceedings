@@ -6,10 +6,9 @@
 :email: 	jmb2@cesar.org.br
 :institution: Cesar School
 
------------------------------------------------------------------
-Continuous Improvement For Clinical Bioinformatics Pipelines
------------------------------------------------------------------
-
+-------------------------------------------------------------------------
+Continuous Improvement For Clinical Bioinformatics Pipelines Development
+-------------------------------------------------------------------------
 .. class:: abstract
 
    How to successfully build a bioinformatics pipeline for clinical sequencing exams, consisting of collecting and refining requirements,
