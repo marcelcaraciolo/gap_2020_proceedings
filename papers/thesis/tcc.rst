@@ -207,14 +207,16 @@ input files By reusing the tasks , developers can dramatically speed the develop
 the WDL declarative syntax and style code, respectively.
 
 .. figure:: figure5.png
+   :scale: 30 %
+
 
    Bioinformatics workflows written with WDL in multiple levels of complexity warrant a modular construction. It is easiest to program the workflow when its logic is abstracted away (in Tasks, red)
    from the command line invocations (in Bash scripts, pink) of the bioinformatics tools (light pink). Individual workflows can be further used as subworkflows of a larger Master
-   workflow. This architecture facilitates expression of additional complexity due to optional modules(dashed line), nested levels of parallelism (groups of arrows connecting red rectangles) 
-   and scatter-gather patterns (task 2 scattered across samples being merged into task 3). :label:`egfig5`
+   workflow. :label:`egfig5`
 
 
 .. figure:: figure6.png
+   :scale: 20 %
 
    Example of an workflow skeleton. We define the inputs and corresponding outputs, each one declared as variables. We also define the tasks, which it will be computational blocks that will execute the pipeline commands.
    These tasks are invoked from the main workflow using the call methods. :label:`egfig6`
