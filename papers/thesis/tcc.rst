@@ -11,14 +11,8 @@ Continuous Improvement For Clinical Bioinformatics Pipelines Development
 -------------------------------------------------------------------------
 .. class:: abstract
 
-   How to successfully build a bioinformatics pipeline for clinical sequencing exams, consisting of collecting and refining requirements,
-   interative software development, continuous testing and validation, and delivery, is the challenge faced by many bioinformatics development teams.
-   Typical pipeline involves collecting and refining the requirements, translating into features, setting up an infrastructure, building a computation
-   process, and analyzing the results. When the adjustments are made, this process repeates as many times as necessary until the pipeline has been properly
-   validated. At Varstation, by using continous improvement techniques, we built a more efficient way to iterate on building those pipelines so we could optimize
-   and deliver faster, but commited to providing accurate tests results. In this paper, we present our approach for design, build and deliver our
-   pipelines after several changes in our software development process, which can be valuable for any bioinformatics teams interested in implementing with faster
-   iterations clinical bioinformatics pipelines.
+   How to successfully build a bioinformatics pipeline for clinical sequencing exams, consisting of collecting and refining requirements, iterative software development, continuous testing and validation, and delivery, is the challenge faced by many bioinformatics development teams.
+   A typical pipeline involves collecting and refining the requirements, translating into features, setting up an infrastructure, building a computation process, and analyzing the results. When the adjustments are made, this process repeats as many times as necessary until the pipeline has been properly validated. At Varstation, by using continuous improvement techniques, we built a more efficient way to iterate on building those pipelines so we could optimize and deliver faster, but committed to providing accurate tests results. In this paper, we present our approach for designing, build and delivering our pipelines after several changes in our software development process, which can be valuable for any bioinformatics teams interested in implementing with faster iterations clinical bioinformatics pipelines.
 
 .. class:: keywords
 
@@ -28,21 +22,21 @@ Introduction
 ------------
 
 Bioinformatics has become an important component in clinical laboratories generating, analyzing, maintaining, and interpreting data from molecular genetics testing :cite:`Gavin01`.
-Given the rapid adoption of NGS-based clinical testing, service providers must develop informatics workflows that adhere to the rigor of clinical laboratory standards,
-but flexible to changes as the chemistry and software for analyzing sequencing data mature. Next generation sequencing (NGS) is a transformative technology that is redefining the landscape
+Given the rapid adoption of NGS-based clinical testing, service providers must develop informatics workflows that adhere to the rigor of clinical laboratory standards
+but are flexible to changes as the chemistry and software for analyzing sequencing data mature. Next-generation sequencing (NGS) is a transformative technology that is redefining the landscape
 of human molecular genetic testing. It enables unprecedented parallelization of sequencing reactions, facilitating highly multiplexed testing paradigms with relatively rapid turnaround
 time and decreasing costs. A growing number of diagnostic laboratories are embracing NGS and using it to drive new DNA-based test offerings, ranging in size and species, from human to
-microbiome genomes and from multigene disease-specific panels to use of complete genome sequencing :cite:`Horner01`. When genetic tests are ordered, there is probably little thought as to all of the of bioinformatics work required
+microbiome genomes and from multigene disease-specific panels to the use of complete genome sequencing :cite:`Horner01`. When genetic tests are ordered, there is probably little thought as to all of the bioinformatics work required
 to make the test possible. The Hospital Israelita Albert Einstein provides diagnostic tests to help physicians understand risk profiles, diagnose medical conditions, or inform treatment decisions. To support their
 comprehensive test menu and commitment to providing timely and accurate test results, the bioinformatics team focuses on optimizing their pipelines by designing workflows to leverage modularity and computational re-use, in order to
-better understand the requirements for each molecular test; by using declarative workflow language as main programming tool to a more collaborative and legible code; by applying continous integration systems to the software development
-in order to avoid manual validation, integration tests and releases; and by creating a collaborative repository of guidelines so any bioinformatician, beginner or experienced, at our team, can  begin build his first pipelines following the best practices.
-All these improvements were conducted during three months by observing the bioinformatics pipeline development organization and applying changes in order to evaluate the gains in each step of the bioinformatics development lifecycle.
+better understand the requirements for each molecular test; by using declarative workflow language as the main programming tool to a more collaborative and legible code; by applying continuous integration systems to the software development
+in order to avoid manual validation, integration tests, and releases; and by creating a collaborative repository of guidelines so any bioinformatician, beginner or experienced, at our team, can begin to build his first pipelines following the best practices.
+All these improvements were conducted during three months by observing the bioinformatics pipeline development organization and applying changes to evaluate the gains in each step of the bioinformatics development lifecycle.
 
-The purpose of this paper is to present an experience report in our bioinformatics team at Varstation (our bioinformatics department at the hospital), by providing a collection of experience notes, artifacts and systems that we introduced
+The purpose of this paper is to present an experience report in our bioinformatics team at Varstation (our bioinformatics department at the hospital), by providing a collection of experience notes, artifacts, and systems that we introduced
 and formalized during the period of reviewing our bioinformatics software development process. The detailed study results can be found in the remainder of the paper.
-This paper is structured as follows. Section II introduces the background and related work that indicate the reason for our research. Section III introduces the research method
-and process. Section IV presents the artifacts produced and related results. Section V discusses the implications to study results. Section VI concludes the study and illustrates the future work.
+This paper is structured as follows. Section II introduces the background and related work that indicates the reason for our research. Section III introduces the research method
+and process. Section IV presents the artifacts produced and related results. Section V discusses the implications of the study results. Section VI concludes the study and illustrates the future work.
 
 II. Background
 --------------
