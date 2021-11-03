@@ -101,15 +101,15 @@ lack the necessary combination of parallelism, portability, flexibility and/or r
 a platform to develop and share portable pipelines have recently arisen. Workflows descriptors such as Workflow Description Language (WDL) are hosted with containers to provide workflows scripts that can be reproducibly
 executed on the cloud or local cluster :cite:`Larsonneur01`. In our team, we migrated our pipelines written in bash scripts to WDL in order to improve our pipeline development step and facilitate our bioinformaticians to rapidly start developing.
 
-Continous integration
+Continuous integration
 =======================
 
 Continuous integration (CI) has been a de facto standard for building industrial-strength software :cite:`Duvall01`. Yet, there is little attention towards
 applying CI to the development of bioinformatics applications until the very recent effort on the theoretical side :cite:`Spjuth01`. Continuous integration helps the development team to automate several steps of the pipeline development lifecycle such as
-the test automation, the validation benchmark against a test sample, or the promotion of the release pipeline artfifact which can be used for upstream consumption in the production environment.
+the test automation, the validation benchmark against a test sample, or the promotion of the release pipeline artifact which can be used for upstream consumption in the production environment.
 
-Figure :ref:`egfig3` presents an overview of the software development lifecycle under a traditicional CI system. The entire lifecycle consists of four stages: develop, build, test and merge. In advanced scenarios the CI workflow can also be added to 
-a continous delivery (CD) when the release artifact is automatically released to the repository , or even further, to a continuous deployment, when in this case the artifact is deployed automatically to the production environment.
+Figure :ref:`egfig3` presents an overview of the software development lifecycle under a traditional CI system. The entire lifecycle consists of four stages: develop, build, test, and merge. In advanced scenarios, the CI workflow can also be added to 
+a continuous delivery (CD) when the release artifact is automatically released to the repository, or even further, to a continuous deployment, when in this case the artifact is deployed automatically to the production environment.
 
 .. figure:: figure3.png
    :scale: 20%
