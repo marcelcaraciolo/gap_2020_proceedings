@@ -120,10 +120,10 @@ a continous delivery (CD) when the release artifact is automatically released to
 Development Playbooks
 =====================
 
-The bioinformatics team is a multidisciplinary group that may include developers, devops developers, designers , biologists and bioinformaticians who have different cultures, terminologies, and standards of proficience. Thus, in order to establish a productive collaboration and
-effective development, the team must have the necessary tools, proper training and the best practices in mind, before starting building the pipelines. Development playbooks are intervention guidebooks that are created by, understood by, and acceptable to all members of the
-multidisciplinary bioinformatices development team. These guidelines are created to aid the development of any software, so the beginners and the experienced members can use the same development principles and definitions shared to improve their target goal, which is the
-delivery of a reproducible, tested and optimized pipeline. Development playbooks are very popular among several mature software companies that are evolving their software development skills :cite:`Filipe01` :cite:`Thomas01`.
+A bioinformatics team is a multidisciplinary group that may include developers, DevOps developers, designers, biologists, and bioinformaticians who have different cultures, terminologies, and standards of proficiency. Thus, in order to establish a productive collaboration and
+effective development, the team must have the necessary tools, proper training, and the best practices in mind, before starting building the pipelines. Development playbooks are intervention guidebooks that are created by, understood by, and acceptable to all members of the
+multidisciplinary bioinformatics development team. These guidelines are created to aid the development of any software, so the beginners and the experienced members can use the same development principles and definitions shared to improve their target goal, which is the
+delivery of a reproducible, tested, and optimized pipeline. Development playbooks are very popular among several mature software companies that are evolving their software development skills :cite:`Filipe01` :cite:`Thomas01`.
 
 
 III. Research Method
