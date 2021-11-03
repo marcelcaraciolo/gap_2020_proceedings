@@ -71,9 +71,9 @@ Continuous Improvement
 =======================
 
 Continuous Improvement related topics have been studied by software engineering (SE) practitioners and researchers for many years :cite:`Birk01`. There are several related articles in blogs,
-magazine, SE releated magazines :cite:`TechSpace`. Continuous Improvement identifies the opportunities to streamline the work while reducing waste. It follows the Japanese concept of kaizen, which means to make small incremental improvements continuously. It empowers the agile team so
-they can work well together and discuss what is working and what isn’t. There are several empirical studies and practices of conducting continous improvement in software organizations :cite:`Birk01` :cite:`Brian01`. However, despite these practices have been examined by in many software industries, we failed
-to identify any research conducted on healtchare and bioinformatics software organizations that are carrying continous improvement in practices.
+magazine, SE related magazines :cite:`TechSpace`. Continuous Improvement identifies the opportunities to streamline the work while reducing waste. It follows the Japanese concept of kaizen, which means to make small incremental improvements continuously. It empowers the agile team so
+they can work well together and discuss what is working and what isn’t. There are several empirical studies and practices of conducting continuous improvement in software organizations :cite:`Birk01` :cite:`Brian01`. However, despite these practices have been examined in many software industries, we failed
+to identify any research conducted on healthcare and bioinformatics software organizations that are carrying continuous improvement in practices.
 
 Product Canvas: Building the pipelines with the right features
 ==============================================================
