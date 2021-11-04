@@ -167,20 +167,20 @@ The review technique also helped us to identify inneficiencies to eliminate, pos
 IV. Current Results
 -------------------
 
-In this section we provide some of the current results and the artifacts produced during the period of three months (from August 2021 until October 2021) as we started the study method presented in the section above.
+In this section, we provide some of the current results and the artifacts produced during the period of three months (from August 2021 until October 2021) as we started the study method presented in the section above.
 
 
 A. Design and Planning
 ======================
 
-Our bioinformatics team, through the years, was delivering bioinformatics pipelines for many omics: transcriptome, genomics and metagenomics. For each one there is a common toolset for the pipeline building development. It is up to the bioinformatician to analyze the biological
-problem that will be solved, define the tools and algorithms available for each variant calling step from the DNA digital sequences to the genomic variants and build an automated pipeline that perform all these tasks using the computational resources. During the design and Planning
-stage our team discuss with our clients (medical specialists and biologists) to have a common and clear understanding about the main requirements for the pipeline that will be associated to a research project or a novel genetic test available for our patients. Inspired by the 
-Product Canvas , explained at our background section, we proposed and created a Bioinformatics Pipeline Canvas (BPC)  [#]_.  Our canvas is a collaborative tool that includes Agile , scientific methdology, adapted to facilitate the technical discussions between our bioinformaticians, biologist
+Our bioinformatics team, through the years, was delivering bioinformatics pipelines for many omics: transcriptome, genomics, and metagenomics. For each one there is a common toolset for pipeline building development. It is up to the bioinformatician to analyze the biological
+problem that will be solved, define the tools and algorithms available for each variant calling step from the DNA digital sequences to the genomic variants, and build an automated pipeline that performs all these tasks using the computational resources. During the Design and Planning
+stage, our team discusses with our clients (medical specialists and biologists) to have a common and clear understanding of the main requirements for the pipeline that will be associated with a research project or a novel genetic test available for our patients. Inspired by the 
+Product Canvas explained in our background section, we proposed and created a Bioinformatics Pipeline Canvas (BPC)  [#]_.  Our canvas is a collaborative tool that includes Agile, scientific methodology, adapted to facilitate the technical discussions between our bioinformaticians, biologist, 
 and geneticists. The main goal is to have an overall picture to model the pipeline. We will use it as a validation method for checking all the requirements to have a pipeline implemented: Which are the inputs/outs expected for each step of the pipeline, the tools required for
 each pipeline component (task) and the performance criteria that will be considered before being released to a production environment.
 
-At the figure :ref:`egfig4` , we show an example of a full-filled canvas in one of our internal trainings. The artifact is available as open-source template at the miro.com [#]_.
+At the figure :ref:`egfig4` , we show an example of a full-filled canvas in one of our internal training. The artifact is available as an open-source template at miro.com [#]_.
 
 .. figure:: figure4.png
    :align: center
@@ -195,35 +195,35 @@ At the figure :ref:`egfig4` , we show an example of a full-filled canvas in one 
 B. Development
 ==============
 
-One of the improvements at our development cycle was to rethink how we managed and orchestrated our current variant calling bioinformatics pipelines. The changing landscape of genomics research and clinical practice
+One of the improvements in our development cycle was to rethink how we managed and orchestrated our current variant calling bioinformatics pipelines. The changing landscape of genomics research and clinical practice
 has created a need for computational pipelines capable of efficiently orchestrating complex analysis stages while handling large volumes of data across heterogeneous computational environments. Our current pipelines
-were monolytical with shared command line bash scripts with python/perl/R code invoked. The main issue in this approach is that it is difficult to identify/debug problems, it doesn't enable a rapid escalation and
-doesn't promote the modularity within the pipelines. Since 2020 we started to discuss novel tools and bioinformatics worfklow programming languages to help us to mitigate these problems.
+were monolithic with shared command-line bash scripts with python/perl/R code invoked. The main issue in this approach is that it is difficult to identify/debug problems, doesn't enable a rapid escalation, and
+doesn't promote modularity within the pipelines. Since 2020 we started to discuss novel tools and bioinformatics workflow programming languages to help us to mitigate these problems.
 
-After several proof-of-concept tests (POCs) and discussions we came to workflow tools, such as WDL (Workflow Description Language), that makes pipelines easier to express and build. With WDL, you can easily describe the module dependencies and track version changes to the workflow.
-Our team reorganized the pipelines and broke the code within them into smaller modules in WDL, so our future pipelines could benefit of the components implemented just plugging it into the main WDL workflow, and just modify the corresponding
-input files By reusing the tasks , developers can dramatically speed the development of new workflows. The figures :ref:`egfig5` and :ref:`egfig6` presents the architecture overview of bioinformatics workflow written in modules and
+After several proof-of-concept tests (POCs) and discussions, we came to workflow tools, such as WDL (Workflow Description Language), that make pipelines easier to express and build. With WDL, you can easily describe the module dependencies and track version changes to the workflow.
+Our team reorganized the pipelines and broke the code within them into smaller modules in WDL, so our future pipelines could benefit from the components implemented just plugging them into the main WDL workflow, and just modifying the corresponding
+input files By reusing the tasks, developers can dramatically speed the development of new workflows. The figures :ref:`egfig5` and :ref:`egfig6` presents the architecture overview of bioinformatics workflow written in modules and
 the WDL declarative syntax and style code, respectively.
 
 .. figure:: figure5.png
    :scale: 30 %
 
 
-   Bioinformatics workflows written with WDL in multiple levels of complexity warrant a modular construction. It is easiest to program the workflow when its logic is abstracted away (in Tasks, red)
-   from the command line invocations (in Bash scripts, pink) of the bioinformatics tools (light pink). Individual workflows can be further used as subworkflows of a larger Master
+   Bioinformatics workflows are written with WDL in multiple levels of complexity warrant a modular construction. It is easiest to program the workflow when its logic is abstracted away (in Tasks, red)
+   from the command line invocations (in Bash scripts, pink) of the bioinformatics tools (light pink). Individual workflows can be further used as sub workflows of a larger Master
    workflow. :label:`egfig5`
 
 
 .. figure:: figure6.png
    :scale: 20 %
 
-   Example of an workflow skeleton. We define the inputs and corresponding outputs, each one declared as variables. We also define the tasks, which it will be computational blocks that will execute the pipeline commands.
+   Example of a workflow skeleton. We define the inputs and corresponding outputs, each one declared as variables. We also define the tasks, which will be computational blocks that will execute the pipeline commands.
    These tasks are invoked from the main workflow using the call methods. :label:`egfig6`
 
 
-The team also changed the orchestration tool from using AWS Lambda tasks to a open source bioinformatics tool developed by the Broad Institute of Harvard University and MIT called Cromwell [#]_ :cite:`Voss01`.
-It is a workflow-execution engine that simplifies the orchestration of computing tasks needed for genomic analysis. With the infra-structure and devops team working together, we led to Cromwell
-being able to run directly on an Amazon Web Services (AWS, cloud-computing) environment [#]_. This has given our bioinformatician more flexibility in scaling their genomic workflows.
+The team also changed the orchestration tool from using AWS Lambda tasks to an open-source bioinformatics tool developed by the Broad Institute of Harvard University and MIT called Cromwell [#]_ :cite:`Voss01`.
+It is a workflow-execution engine that simplifies the orchestration of computing tasks needed for genomic analysis. With the infrastructure and DevOps team working together, we led to Cromwell
+being able to run directly on an Amazon Web Services (AWS, cloud-computing) environment [#]_. This has given our bioinformaticians more flexibility in scaling their genomic workflows.
 For instance, our whole human genome variant calling Pipeline is using Cromwell to automate and enhance its quality control capabilities in our analysis software Varstation [#]_. Figure :ref:`egfig7` presents
 the AWS proposed architecture for running Cromwell using the AWS Batch environment :cite:`Schreiber01`.
 
@@ -237,8 +237,8 @@ the AWS proposed architecture for running Cromwell using the AWS Batch environme
    Cromwell is a workflow management system for scientific workflows developed by the Broad Institute and supports job execution using AWS Batch. :label:`egfig7`
 
 
-Finally, one of the improvements for building new bioinformatics pipelines was propose a minimal base template for our developers getting started following our best practices and guidelines. Several CI scripts, version control management,
-docummentation build scripts and automated workflow test suite integrated were compiled into this repository. It is a basic start pipeline so from begginners to advanced users can use it right away. At the time of writing this paper, we
+Finally, one of the improvements for building new bioinformatics pipelines was proposing a minimal base template for our developers to get started following our best practices and guidelines. Several CI scripts, version control management,
+documentation build scripts and automated workflow test suite integrated were compiled into this repository. It is a basic start pipeline so from beginners to advanced users can use it right away. At the time of writing this paper, we
 were still validating the framework by migrating our old pipelines to WDL based on it. The figure :ref:`egfig8` shows the repository of our minimal pipeline template hosted as a template repository on Github [#]_.
 
 .. [#] Our minimal pipeline template on Github repository, https://github.com/Varstation/pipeline-template
@@ -248,24 +248,24 @@ were still validating the framework by migrating our old pipelines to WDL based 
    Our minimal pipeline template was hosted in Github as a pipeline repository so the developers can easily fork all the code to their new pipeline repository. :label:`egfig8`
 
 
-C. Build, test  and optimization
+C. Build, test, and optimization
 =================================
 
-In this stage, our team draw our inspiration from continous integration (CI), which has been part of the industry standard of modern development. CI services lift the burden of managing
+In this stage, our team draws our inspiration from continuous integration (CI), which has been part of the industry standard of modern development. CI services lift the burden of managing
 the software development lifecycle from the developers by providing a variety of tools for building and testing software applications in an automated and iterative manner. Development of 
-bioinformatic pipelines is not much different in this regard from regular software systems - it typically mandates many interations as developers try to continuously improve the quality
-of their workflows as new software versions are released or new variant annotation datases are published.
+bioinformatic pipelines are not much different in this regard from regular software systems - it typically mandates many interactions as developers try to continuously improve the quality
+of their workflows as new software versions are released or new variant annotation datasets are published.
 
-Before the CI, our tests were manually handled and all the builds were performed manually when the developers remembered to perform it. This caused to many refactories and hidden bugs that
-weren't easily manageable. There was also any code validation following WDL code style best practices, as more members started to push their code into the repositories, specially, the tasks modules,
-it brought to our attention the fact the changes in some module could affect many dependant pipelines. Figure :ref:`egfig9` presents an overview of the bioinformatics development lifecycle
+Before the CI, our tests were manually handled and all the builds were performed manually when the developers remembered to perform them. This caused too many refactorings and hidden bugs that
+weren't easily manageable. There was also no code validation following WDL code style best practices, as more members started to push their code into the repositories, especially, the tasks modules,
+it brought to our attention the fact the changes in some modules could affect many dependant pipelines. Figure :ref:`egfig9` presents an overview of the bioinformatics development lifecycle
 under our CI system. Like the development of regular software, the entire lifecycle consists of four stages (akin to a GitHub or Azure DevOps kind of development scenario):
 
 - **Develop** – the developer writes code for the variant calling pipeline, reusing when appropriate the existing task modules, as well as basic parameter collection.
 
 - **Build** – the developer requests merging the code into the main branch (a.k.a., a pull request); this automatically triggers the build process of the codebase, which validates the code style (linting), run the appropriate tests with small data samples as parameters to validate if all expected outputs are produced.
 
-- **Validation** - The validation phase follows if the build process succeeds; the final pipeline is evaluated against the benchmark datataset, after which the test performance metrics is reported to the developer.
+- **Validation** - The validation phase follows if the build process succeeds; the final pipeline is evaluated against the benchmark dataset, after which the test performance metrics are reported to the developer.
 
 - **Release**  - if all the testes cases are passed and the developer is satisfied with the accuracy and metrics, the pipeline can then be promoted to a release environment for upstream consumption, potentially replacing the old versioned pipeline that was already released.
 
@@ -276,9 +276,9 @@ under our CI system. Like the development of regular software, the entire lifecy
 
 
 Our first CI system was implemented and tested with some test pipelines. As illustrated in Figure :ref:`egfig10`, we implemented it using
-Github Actions [#]_ and we integrated some auxiliar tools for testing, packaging and verifying code in the process. One example was writting 
-tests for the pipeline and guarantee the correct and expected outputs. We used the open-source tool Pytest-workflow [#]_ that make testing as simple as possible,
-by testing a WDL pipeline run through Cromwell. The CI runs the test-suite available with the sample data and verifies the cromwell log outputs in seek of any errors found
+Github Actions [#]_ and we integrated some auxiliary tools for testing, packaging, and verifying code in the process. One example was writing  
+tests for the pipeline and ensuring the correct and expected outputs. We used the open-source tool Pytest-workflow [#]_ that makes testing as simple as possible,
+by testing a WDL pipeline run through Cromwell. The CI runs the test-suite available with the sample data and verifies the Cromwell log outputs in seek of any errors found
 during the execution.
 
 .. [#] Github Actions, https://github.com/features/actions
@@ -287,7 +287,7 @@ during the execution.
 
 .. figure:: figure10.png
 
-   Our build continous integration script for the tasks of validating the code and running tests. :label:`egfig10`
+  Our build of the continuous integration script for the tasks of validating the code and running tests. :label:`egfig10`
 
 
 D. Validation
@@ -298,13 +298,13 @@ Accreditation requirements also state that bioinformatics pipelines must be vali
 specificity, accuracy, and precision for all variant types reported by the clinical assay :cite:`Jennings01`.
 
 Our benchmarking strategy to meet these requirements was to evaluate the performance using a set of reference samples with a large number of gold-standard variant calls and
-clinical samples with a a small number of clinical variants that are specific to the diagnostic assay being evaluated. We developed a benchmarking pipeline (vcf comparison framework)
-which accepts input and truth set variant call files and regions of interest files to calculate the performance metrics across the entire region of interest.  Before the continous improvement
-process, our benchmark workflow was performed manually using bash scripts and terminal commandlines. Then, we ported our benchmarking modules to WDL format to use pipeline execution engines
-such as Cromwell, using our computer-infrastructure at Amazon WebServices. We also integrated with deployment tool, such as Github Actions, a feature that could automate our benchmarking workflows
+clinical samples with a small number of clinical variants that are specific to the diagnostic assay being evaluated. We developed a benchmarking pipeline (vcf comparison framework)
+which accepts input and truth set variant call files and regions of interest files to calculate the performance metrics across the entire region of interest.  Before the continuous improvement
+process, our benchmark workflow was performed manually using bash scripts and terminal command lines. Then, we ported our benchmarking modules to WDL format to use pipeline execution engines
+such as Cromwell, using our computer infrastructure at Amazon WebServices. We also integrated with deployment tools, such as Github Actions, a feature that could automate our benchmarking workflows
 when any pipeline was released a new candidate version.
 
-The figure :ref:`egfig11` presents a schematic diagram of the benchmark framework used in this study. The benchmarking workflow written in WDL format consistes of five main steps in which the software tool employed
+The figure :ref:`egfig11` presents a schematic diagram of the benchmark framework used in this study. The benchmarking workflow  is  written in WDL format consists  of five main steps in which the software tool employed
 in each step is indicated within parentheses.
 
 .. figure:: figure11.png
@@ -315,37 +315,36 @@ in each step is indicated within parentheses.
 E. Release and deploy
 =====================
 
-Our release stage was also modified in order to enable an automated manner to perform the deployment of the release artifacts with version control, pipeline docummentation and release notes. Before we deployed versions manually but without concise release notes
-or a controlled version control common to our all bioinformatic pipeline. Moreover, we didn't have an offical place to put our release files. We  integrated with our continous integration tool in order that every new 
-tag pushed to the Github (a new version published), the CI starts to verify all the WDL files, package it into a binary (zip file) and makes it available as release package at the pipeline's repository [#]_. 
-The docummentation is also published to the Github Pages as a single page for each pipeline [#]_. With this improvement, our Releases became
-available for other teams to download and use it, and can receive notifications when they are published. Figure :ref:`egfig12` presents the released pipeline packaged contaning the releases notes and the corresponding assets.
+Our release stage was also modified in order to enable an automated manner to perform the deployment of the release artifacts with version control, pipeline documentation, and release notes. Before we deployed versions manually but without concise release notes
+or a controlled version control common to our all bioinformatic pipeline. Moreover, we didn't have an official place to store our release files. We integrated with our continuous integration tool in order that every new 
+tag pushed to Github (a new version published), the CI starts to verify all the WDL files, package it into a binary (zip file) and makes it available as a release package at the pipeline's repository [#]_. 
+The documentation is also published to the Github Pages as a single page for each pipeline [#]_. With this improvement, our Releases became
+available for other teams to download and use, and can receive notifications when they are published. Figure :ref:`egfig12` presents the released pipeline package containing  the release notes and the corresponding assets.
 
-.. [#] Example of our CI script for packaging and releasing our bioinformatics pipelines, Available at https://gist.github.com/marcelcaraciolo/4bae60a66f9ae9a68c27a4102eb8769c
-.. [#] Example of our pipeline docummentation, Available at https://varstation.github.io/pipeline-template/0.1.0/index.html
+.. [#] Example of our CI script for packaging and releasing our bioinformatics pipelines, available at https://gist.github.com/marcelcaraciolo/4bae60a66f9ae9a68c27a4102eb8769c
+.. [#] Example of our pipeline documentation, available at https://varstation.github.io/pipeline-template/0.1.0/index.html
 
 .. figure:: figure12.png
 
-   Releases Page of one our pipeline's repository on Github. Now all the pipelines follows our best practices by using our CI tools available at our minimal pipeline template. :label:`egfig12`
+   Releases Page of one of our pipeline's repositories on Github. Now all the pipelines follow our best practices by using our CI tools available at our minimal pipeline template. :label:`egfig12`
 
 
 
-F. Docummentation
+F. Documentation
 =================
 
-Our experience working with a multidisciplinary team of developers and bioinformaticians with different background in the creation of a bioinformatics pipeline exposed a significant challenge. 
-Through our process of continous improvement, we decided to address this challenge and improve the collaboration and the on-boarding of the new members to our team by creating a 
-of best practices guidelines, containing examples about how creating the pipelines, and detailing each step from our variant calling pipeline lifecycle development. At the time of writing of this paper,
-the first draft of our bioinformatics development playbook was available and acommodated several guidelines and manuals from the design to the deployment of a pipeline. The docummentation is hosted on-line
-and its code is all on a Github repository, so anyone at the team can collaborate by adding or changing the content as a dynamic docummentation [#]_. The figure :ref:`egfig13`  presents one of the screenshots of our bioinformatics playbook.
+Our experience working with a multidisciplinary team of developers and bioinformaticians with different backgrounds in the creation of a bioinformatics pipeline exposed a significant challenge. 
+Through our process of continuous improvement, we decided to address this challenge and improve the collaboration and the on-boarding of the new members to our team by creating best practices guidelines, containing examples about how to create the pipelines, and detailing each step from our variant calling pipeline lifecycle development. At the time of writing this paper,
+the first draft of our bioinformatics development playbook was available and accommodated several guidelines and manuals from the design to the deployment of a pipeline. The documentation is hosted on-line
+and its code is all on a Github repository, so anyone on the team can collaborate by adding or changing the content as dynamic documentation[#]_. The figure :ref:`egfig13`  presents one of the screenshots of our bioinformatics playbook.
 All the code is based on the open-source media wiki tool Docusaurus [#]_.
 
-.. [#] Our bioinformatics playbook, Available at https://varstation.github.io/bioinfo-playbook/
-.. [#] Docusaurus platform, Available at https://docusaurus.io/
+.. [#] Our bioinformatics playbook, available at https://varstation.github.io/bioinfo-playbook/
+.. [#] Docusaurus platform, available at https://docusaurus.io/
 
 .. figure:: figure13.png
 
-   One of the sections of our bioinformatics playbook on-line. The content is written in Markdown and all the source code is availaibe on our Github repository. Anyone in the team is invited to collaborate. :label:`egfig13`
+   One of the sections of our bioinformatics playbook is online. The content is written in Markdown and all the source code is available on our Github repository. Anyone in the team is invited to collaborate. :label:`egfig13`
 
 V. Discussion
 --------------
