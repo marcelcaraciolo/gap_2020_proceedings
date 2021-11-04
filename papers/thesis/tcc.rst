@@ -73,17 +73,17 @@ Product Canvas: Building the pipelines with the right features
 ==============================================================
 
 The goal of developing the product canvas has been to create a lean tool to develop successful product models in a framework that integrates user experience and feature development themes,
-encourages innovation, and more closely represents the process as it occurs in practice :cite:`Roman01`.  Specifically, it combines Agile and UX by complementing user stories with personas, storyboards, scenarios, design sketches and other UX artifacts.
-The prototype version of the product canvas is shown in Figure :ref:`egfig2` below and is available online for developers and practitioners to test, evaluate, and provide feedback. In our scenario, this tool can be applied to prepare and gather required 
-information to the pipeline development phase as a product with a specific goal defined and the target genetic testing identified by the clinical specialists. From the laboratory need it is also possible to derive the validation metrics and 
+encourages innovation, and more closely represents the process as it occurs in practice :cite:`Roman01`.  Specifically, it combines Agile and UX by complementing user stories with personas, storyboards, scenarios, design sketches, and other UX artifacts.
+The prototype version of the product canvas is shown in Figure :ref:`egfig2` below and is available online for developers and practitioners to test, evaluate, and provide feedback. In our scenario, this tool can be applied to prepare and gather the required 
+information for the pipeline development phase as a product with a specific goal defined and the target genetic testing identified by the clinical specialists. From the laboratory need, it is also possible to derive the validation metrics and 
 required acceptance criteria.
 
 .. figure:: figure2.png
    :align: center
    :figclass: w
 
-   The Product Canvas is a collaborative tool that combines Agile and UX by complementing user stories with personas, storyboards, scenarios, design sketches and other UX artifacts. It helps the team
-   to identify the target group, extracting their needs and solving those needs with solutions and finally packaging those solutions as tasks :cite:`Roman01`.  :label:`egfig2` 
+   The Product Canvas is a collaborative tool that combines Agile and UX by complementing user stories with personas, storyboards, scenarios, design sketches, and other UX artifacts. It helps the team
+   to identify the target group, extract their needs and solve those needs with solutions, and finally package those solutions as tasks :cite:`Roman01`.  :label:`egfig2` 
 
 
 Workflow Description Language for building pipelines
