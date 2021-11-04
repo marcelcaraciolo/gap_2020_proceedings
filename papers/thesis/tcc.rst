@@ -375,34 +375,34 @@ our continuous improvement process, which is demonstrated by the set of indicato
 B. Bioinformatics pipeline development process improvement culture
 ==================================================================
 
-After applying our continous improvement changes, our team reported that
-the developers voluntary asked to participate and improve our development process. The team started to experiment
-and improve more, reviewing the feedbacks of the process, and adjusting it to make it better resulted. Our playbook was one these resulting artifacts as a 
-great compilation of our practices, as we started to investigate each step of our development process and co-create continous strategies to
-improve it. Finally, the intenal open source culture applied and the team collaborative sense of ownership that the bioinformatics is critical component for a
-sequecing genetic test, started to make changes towards our laboratory's needs and goals.
+After applying our continuous improvement changes, our team reported that
+the developers voluntarily asked to participate and improve our development process. The team started to experiment
+and improve more, reviewing the feedbacks of the process, and adjusting it to make it better resulted. Our playbook was one of these resulting artifacts as a 
+great compilation of our practices, as we started to investigate each step of our development process and co-create continuous strategies to
+improve it. Finally, the internal open-source culture applied and the team collaborative sense of ownership that bioinformatics is a critical component for a
+sequencing genetic test started to make changes towards our laboratory's needs and goals.
 
 
 VI. Conclusion and future work
 ------------------------------
 
-This paper presents our experience report applying continous improvement techniques in our
+This paper presents our experience report applying continuous improvement techniques in our
 bioinformatics pipeline development process at Hospital Israelita Albert Einstein. For the study purpose,
 we reviewed each stage of our workflow development process. Several meetings were held to discuss the details.
-The team defined and planned the set of goals that they wanted to act, and peformed several experiments with adjustments
-in the process and to include new software tools to provide lightweight process and simplify the bioinformatician collaboration.
-Finally, the team reviewed the adjustments and using incremental approach, to assses the improvements.
+The team defined and planned the set of goals that they wanted to act, and performed several experiments with adjustments
+in the process and to include new software tools to provide lightweight processes and simplify the bioinformatician collaboration.
+Finally, the team reviewed the adjustments and used an incremental approach, to assess the improvements.
 
-This paper has three main contributions. First, from the industry perspective, it introduces a use case of carrying out continous improvement methods
-in a bioinformatics software development team. Second, from the academia perspective, this paper connects agile and project management researchers
-to practical application of PDCA techniques into a non-traditional software project. Also, we identify some sucess factors as the whole team effort and
-the time reduced from the pipeline creation to production deployment using continous integration (CI) tools. Finally, the artifacts produced after our
+This paper has three main contributions. First, from the industry perspective, it introduces a use case of carrying out continuous improvement methods
+in a bioinformatics software development team. Second, from the academic perspective, this paper connects agile and project management researchers
+to practical application of PDCA techniques into a non-traditional software project. Also, we identify some success factors as the whole team effort and
+the time reduced from the pipeline creation to production deployment using continuous integration (CI) tools. Finally, the artifacts produced after our
 improvements might inspire and benefits other software organizations to carry out these same methodologies in their projects. We believe that the set
 of the key results presented in this paper might be candidate solutions to other bioinformatics software teams, that are facing the same issues of scaling up
 the team and the high-effective infrastructure to keep up with the new challenges of the demanding NGS molecular tests.
 
-For future work, we want to validate externally and internally our continous improvement process to evaluate and measure the long-term benefits
-on applying these improvements at our development process.
+For future work, we want to validate externally and internally our continuous improvement process to evaluate and measure the long-term benefits
+on applying these improvements to our development process.
 
 References
 ----------
