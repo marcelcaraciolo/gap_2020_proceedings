@@ -11,14 +11,8 @@ Continuous Improvement For Clinical Bioinformatics Pipelines Development
 -------------------------------------------------------------------------
 .. class:: abstract
 
-   How to successfully build a bioinformatics pipeline for clinical sequencing exams, consisting of collecting and refining requirements,
-   interative software development, continuous testing and validation, and delivery, is the challenge faced by many bioinformatics development teams.
-   Typical pipeline involves collecting and refining the requirements, translating into features, setting up an infrastructure, building a computation
-   process, and analyzing the results. When the adjustments are made, this process repeates as many times as necessary until the pipeline has been properly
-   validated. At Varstation, by using continous improvement techniques, we built a more efficient way to iterate on building those pipelines so we could optimize
-   and deliver faster, but commited to providing accurate tests results. In this paper, we present our approach for design, build and deliver our
-   pipelines after several changes in our software development process, which can be valuable for any bioinformatics teams interested in implementing with faster
-   iterations clinical bioinformatics pipelines.
+   How to successfully build a bioinformatics pipeline for clinical sequencing exams, consisting of collecting and refining requirements, iterative software development, continuous testing and validation, and delivery, is the challenge faced by many bioinformatics development teams.
+   A typical pipeline involves collecting and refining the requirements, translating into features, setting up an infrastructure, building a computation process, and analyzing the results. When the adjustments are made, this process repeats as many times as necessary until the pipeline has been properly validated. At Varstation, by using continuous improvement techniques, we built a more efficient way to iterate on building those pipelines so we could optimize and deliver faster, but committed to providing accurate tests results. In this paper, we present our approach for designing, build and delivering our pipelines after several changes in our software development process, which can be valuable for any bioinformatics teams interested in implementing with faster iterations clinical bioinformatics pipelines.
 
 .. class:: keywords
 
