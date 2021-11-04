@@ -41,25 +41,25 @@ and process. Section IV presents the artifacts produced and related results. Sec
 II. Background
 --------------
 
-This section reviews the concept of bioinformatics development lifecycle and related work conducted on our continous improvement research.
+This section reviews the concept of the bioinformatics development lifecycle and related work conducted on our continous improvement research.
 
 
 Bioinformatics pipeline development
 ===================================
 
-With the advent of clinical sequencing , the bioinformatis pipelines for detection and variant annotation are becoming more popular. However, the process of translating the requirements of the biological and medical specialists is not a trivial task, adding to that,
-the continuous development, testing and release, with improvements, the clinical pipelines. Compared to the traditional software development, the bioinformatics pipelines handles with biological inputs/outputs, runtime parameters and code itself, and  requires a continous
-monitoring as the new versions from the dependant softwares are released or a need for a replacement of a new annotation biological database or even a new type of variant that must be detected  :cite:`Whiffin01`. In our scenario the bioinformatics pipeline must be reavaluated every time 
+With the advent of clinical sequencing, bioinformatics pipelines for detection and variant annotation are becoming more popular. However, the process of translating the requirements of the biological and medical specialists is not a trivial task, adding to that,
+the continuous development, testing, and release, with improvements, the clinical pipelines. Compared to the traditional software development, the bioinformatics pipelines handle biological inputs/outputs, runtime parameters, and code itself, and  requires continuous
+monitoring as the new versions from the dependant software are released or a need for a replacement of a new annotation biological database or even a new type of variant that must be detected  :cite:`Whiffin01`. In our scenario, the bioinformatics pipeline must be reevaluated every time 
 that a new genome version is updated or any refreshments in related databases. Developing a bioinformatics pipeline includes five steps from its conception to the final release in the production environment. At the figure :ref:`egfig` we depict the bioinformatics pipeline development lifecycle.
 
 .. figure:: figure1.png
 
-   The commom bioinformatics clinical pipeline development lifecycle. Each step in this workflow must be consolidated with the inputs/outputs mandatory for the following steps.  :label:`egfig` 
+   The common bioinformatics clinical pipeline development lifecycle. Each step in this workflow must be consolidated with the inputs/outputs mandatory for the following steps.  :label:`egfig` 
 
 The analysis pipeline is typically considered to comprise the five main steps of plan/design, build, test/optimization, validation, and release/deploy :cite:`Koboldt01`. The planning includes the biological problem understanding and the selection of the components required to build the pipeline. The 
-build stage leads to bioinformatics pipeline development including the coding, testing and code styles standardization. The test/optimization occurs when the pipeline is built successfully and it must be evaluated considering secondary requirements such as performance and scale.  
-The validation may include the validation and benchmarking of the pipeline in order to guarantee the minimum defined performance metrics criteria. Finally, the release step is when the final artifacts must be delivered considering factors of versioning, docummentation and the executable
-binary to be deployed in the production environment. This general framework varies depending on the precise analytical application, and successful clinical implementation of such work flows requires extensive expertise in bioinformatics and clinical regulatory issues.
+build stage leads to bioinformatics pipeline development including the coding, testing, and code styles standardization. The test/optimization occurs when the pipeline is built successfully and it must be evaluated considering secondary requirements such as performance and scale.  
+The validation may include the validation and benchmarking of the pipeline to guarantee the minimum defined performance metrics criteria. Finally, the release step is when the final artifacts must be delivered considering factors of versioning, documentation and the executable
+binary to be deployed in the production environment. This general framework varies depending on the precise analytical application, and successful clinical implementation of such workflows requires extensive expertise in bioinformatics and clinical regulatory issues.
 
 Continuous Improvement
 =======================
