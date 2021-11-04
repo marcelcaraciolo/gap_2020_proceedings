@@ -129,37 +129,37 @@ delivery of a reproducible, tested and optimized pipeline. Development playbooks
 III. Research Method
 --------------------
 
-We conducted our continous improvement process in four stages: (1) observation, (2) planning, (3) execution, (4) review . It is based on the Plan-Do-Check-Act (PDCA) cycle :cite:`Erivan01` :cite:`Ning01`. Each stage is described in the following sub-sections.
+We conducted our continuous improvement process in four stages: (1) observation, (2) planning, (3) execution, (4) review. It is based on the Plan-Do-Check-Act (PDCA) cycle :cite:`Erivan01` :cite:`Ning01`. Each stage is described in the following sub-sections.
 
 
 
 A. Observation
 ===============
 
-We reviewed the current bioinformatics variant calling pipeline development process and discussed with the team members the pain points for each stage. All these interviews and meetings during the retrospective and daily meetings at the scrum cerimonies helped us to gather
-data to perform some initatives and modifications in the process.
+We reviewed the current bioinformatics variant calling pipeline development process and discussed with the team members the pain points for each stage. All these interviews and meetings during the retrospective and daily meetings at the scrum ceremonies helped us to gather
+data to perform some initiatives and modifications in the process.
 
 B. Planning
 ===========
 
-With the experience notes, the team reflection reports, and the software production snapshot data carried from the first step, we analysed all those material and identified some improvements that could be performed at our process. 
-Each improvement was first discussed with the team, since the implementation of some these adjustments needed a timebox in their current product development sprints. These materials were transformed in user stories or epics in our 
-backlog so we could implement and test them throhgh the sprint.
+With the experience notes, the team reflection reports, and the software production snapshot data carried from the first step, we analyzed all those materials and identified some improvements that could be performed in our process. 
+Each improvement was first discussed with the team since the implementation of some of these adjustments needed a timebox in their current product development sprints. These materials were transformed into user stories or epics in our 
+backlog so we could implement and test them through the sprint.
 
 
 C. Execution
 ============
 
-The user stories were put into the sprint backlog accordingly to the slots available negotiated with the product owner and the development team. Some changes were just improvements in docummentation,
-others just an automation in a specific development build stage (using CIs for instance). The team was commited to perform these changes since it would bring already new experiences and learnings about our current process.
+The user stories were put into the sprint backlog accordingly to the slots available negotiated with the product owner and the development team. Some changes were just improvements in documentation,
+others just automation in a specific development build stage (using CIs for instance). The team was committed to performing these changes since it would bring already new experiences and learnings about our current process.
 
 
 
 D. Review
 ==========
 
-This is the last stage, where we collected the feedback about the improvements after the improvements, and made new adjustments as we decided to refine it, or sometimes since it could be a complex task, delay it for a future iteration.
-The review technique also helped us to identify inneficiencies to eliminate, positive things to enhance and new opportunities to improve.
+This is the last stage, where we collected the feedback about the improvements and we may make new adjustments as we decided to refine it, or sometimes since it could be a complex task, delay it for a future iteration.
+The review technique also helped us to identify inefficiencies to eliminate, positive things to enhance, and new opportunities to improve.
 
 
 
