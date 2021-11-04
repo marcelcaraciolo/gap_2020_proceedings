@@ -90,10 +90,10 @@ Workflow Description Language for building pipelines
 ====================================================
 
 One of the key challenges for bioinformatics pipelines is the rapidly increasing number and complexity of analytical methods. Reproducing the results of a bioinformatics workflow can be challenging given the number of components, each having its own
-set of parameters, dependencies, supporting files, and installation requirements. Several platforms currently exist for the design and execution of complex pipelines . Unfortunately, current platforms
-lack the necessary combination of parallelism, portability, flexibility and/or reproducibility that are required by the current research environment :cite:`Leipzig01`. To address these shortcomings, workflow pipelines that provide
+set of parameters, dependencies, supporting files, and installation requirements. Several platforms currently exist for the design and execution of complex pipelines. Unfortunately, current platforms
+lack the necessary combination of parallelism, portability, flexibility, and/or reproducibility that are required by the current research environment :cite:`Leipzig01`. To address these shortcomings, workflow pipelines that provide
 a platform to develop and share portable pipelines have recently arisen. Workflows descriptors such as Workflow Description Language (WDL) are hosted with containers to provide workflows scripts that can be reproducibly
-executed on the cloud or local cluster :cite:`Larsonneur01`. In our team, we migrated our pipelines written in bash scripts to WDL in order to improve our pipeline development step and facilitate our bioinformaticians to rapidly start developing.
+executed on the cloud or local cluster :cite:`Larsonneur01`. In our team, we migrated our pipelines written in bash scripts to WDL to improve our pipeline development step and facilitate our bioinformaticians to rapidly start developing.
 
 Continous integration
 =======================
