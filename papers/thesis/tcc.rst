@@ -350,33 +350,33 @@ All the code is based on the open-source media wiki tool Docusaurus [#]_.
 V. Discussion
 --------------
 
-In this section we carry out the discussion on our continous improvement proccess and
-explain our preliminary perceived succes factors after applying it through three months.
+In this section we carry out the discussion on our continuous improvement process and
+explain our preliminary perceived success factors after applying it through three months.
 
 A. Perceived success factors
 ============================
 
-In this study, we present a set of key results presented at the section Results after applying the PDCA continous improvement methodology. An emphasis was put on 
+In this study, we present a set of key results presented in the section Results after applying the PDCA continuous improvement methodology. An emphasis was put on 
 the incremental approach to improve our bioinformatics pipeline development workflow and its process. Since the initial phase of our study, there was no documented
-test automation strategy, our requirements collection tools was not mature, there wasn't any code writing standards and several delays on start using the new execution
-engine for our pipelines using WDL and Cromwell. Indeed, all these problems was dicovered step by step in practices. Our team continuously explored their needs and possibilities
-for each of one of our development stages. The direction of our improvement process was discussed in our informal meetings during the retrospective and planning sprint cerimonies.
+test automation strategy, our requirements collection tools were not mature, there weren't any code writing standards, and several delays in starting using the new execution
+engine for our pipelines using WDL and Cromwell. Indeed, all these problems were discovered step by step in practice. Our team continuously explored their needs and possibilities
+for each one of our development stages. The direction of our improvement process was discussed in our informal meetings during the retrospective and planning sprint ceremonies.
 
-Accordingly, the actionable steps were took to make the meaningful changes. We didn't change the whole process, therefore, the changes were always added incrementally piece by piece
-with some testing pipelines into the existing development process. Some changes occurred naturally as problemes arise and needed tobe fixed. The change steps were carried out 
+Accordingly, actionable steps were taken to make meaningful changes. We didn't change the whole process, therefore, the changes were always added incrementally piece by piece
+with some testing pipelines into the existing development process. Some changes occurred naturally as problems arise and needed to be fixed. The change steps were carried out 
 based on experiments to allow learning from all the team, even though some succeeded, some failed and some we postponed due to the complexity. The incremental changes affected
-daily work of the team, both positively and negatively. At the time of writing this paper, our team retrospective sessions showed a high satisfaction and maturity after applying
-our continous improvement process, which is demonstrated by the set of indicators:
+the daily work of the team, both positively and negatively. At the time of writing this paper, our team retrospective sessions showed high satisfaction and maturity after applying
+our continuous improvement process, which is demonstrated by the set of indicators:
 
-- **The increasing speed to release:** Based on the testing pipelines, we could make continous release decisions based on our automation continous integration. The time from development to a build successfully, at our preliminary tests improved from 5 days to 2-3 days when building a pipeline from scratch.
+- **The increasing speed to release:** Based on the testing pipelines, we could make continuous release decisions based on our automation continuous integration. The time from development to a build successfully, at our preliminary tests improved from 5 days to 2-3 days when building a pipeline from scratch.
 
-- **Improving productivity of the team:** The team was capable to develop in a efficient way using the new coding platform, the automation process contributed to speed the several manual steps what consummed the team effort.
+- **Improving productivity of the team:** The team was capable to develop in an efficient way using the new coding platform, the automation process contributed to speed the several manual steps that consumed the team effort.
 
-- **Finding the relevanet requirements:** Our team using visual tools, such as the canvas, could now identify the specific requirements when building bioinformatics pipeline, even finding the modules that could be reused instead of developing from scratch, and pinpointing the expected inputs/outputs required for the pipeline.
+- **Finding the relevant requirements:** Our team using visual tools, such as the canvas, could now identify the specific requirements when building a bioinformatics pipeline, even finding the modules that could be reused instead of developing from scratch, and pinpointing the expected inputs/outputs required for the pipeline.
 
-- **High satisfaction of the customers:** There wasn't enough data to support this, but the perceived impressions from our biologists and specialists were very satisfactory, since the changes of how we collected the requirements and at our training demonstration sessions that our platform were more robust and envolving.
+- **High satisfaction of the customers:** There wasn't enough data to support this, but the perceived impressions from our biologists and specialists were very satisfactory, since the changes of how we collected the requirements and at our training demonstration sessions that our platform was more robust and evolving.
 
-- **Shared platform work guidelines:** The quality of our bioinformatic pipelines started to improve, showing up in low number of maintenance issues, and for the beginners and advanced developers using our playbook, they started to standardize the lifecycle management of our development - onboarding training, planning, building, testing, validation and release.
+- **Shared platform work guidelines:** The quality of our bioinformatic pipelines started to improve, showing up in a low number of maintenance issues, and for the beginners and advanced developers using our playbook, they started to standardize the lifecycle management of our development - onboarding training, planning, building, testing, validation, and release.
 
 
 B. Bioinformatics pipeline development process improvement culture
